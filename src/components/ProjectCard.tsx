@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Project } from "@/data/projects";
+import { withBasePath } from "@/lib/basePath";
 import { spring, staggerItem, staggerItemInstant } from "@/lib/motion";
 
 type ProjectCardProps = {
@@ -31,7 +32,7 @@ export function ProjectCard({ project, priorityImage = false }: ProjectCardProps
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
           <Image
-            src={project.image}
+            src={withBasePath(project.image)}
             alt={`Preview: ${project.title}`}
             fill
             priority={eager}
