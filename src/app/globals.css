@@ -1,26 +1,109 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light, colorful system */
+  --bg-base: #fff8f3;
+  --bg: #fff8f3;
+  --surface: #ffffff;
+  --surface-soft: #fff1e8;
+  --ink: #1c1538;
+  --cream: var(--ink);
+  --muted: #5c6178;
+  --border-subtle: rgba(28, 21, 56, 0.08);
+  --border-strong: rgba(28, 21, 56, 0.12);
+  /* Accents */
+  --copper: #f97316;
+  --copper-light: #8b5cf6;
+  --accent-cyan: #06b6d4;
+  --accent-green: #10b981;
+  --accent-pink: #ec4899;
+  --on-primary: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-syne);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse 90% 70% at 50% -30%,
+      rgba(251, 191, 36, 0.2),
+      transparent 50%
+    );
+    animation: meshBreath 16s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes meshBreath {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(2%, 3%) scale(1.08);
+    opacity: 0.75;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow-x: clip;
+  color: var(--ink);
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  background-color: var(--bg-base);
+  background-image:
+    radial-gradient(
+      ellipse 100% 80% at 0% 0%,
+      rgba(251, 191, 36, 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 70% 60% at 100% 5%,
+      rgba(167, 139, 250, 0.32),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 80% 70% at 80% 100%,
+      rgba(45, 212, 191, 0.22),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 10% 90%,
+      rgba(244, 114, 182, 0.18),
+      transparent 50%
+    ),
+    linear-gradient(180deg, var(--bg-base) 0%, #fff 45%, #fef3f0 100%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: rgba(249, 115, 22, 0.28);
+  color: var(--ink);
+}
+
+@keyframes experience-badge-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.experience-badge-dot {
+  animation: experience-badge-pulse 2.2s ease-in-out infinite;
 }
