@@ -199,6 +199,8 @@ export const privateProjects: Project[] = [
       "Internal accounting software: finance operations, client and ledger views.",
     tags: ["Admin", "Finance", "Internal"],
     image: "/showcases/laoLoyal.png",
+    href: "https://tax.loyal.am/",
+    hrefLabel: "tax.loyal.am",
   },
 ];
 

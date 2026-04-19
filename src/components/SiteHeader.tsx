@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { spring } from "@/lib/motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import styles from "@/styles/portfolio.module.scss";
 
 const links = [
@@ -81,10 +82,8 @@ export function SiteHeader() {
       >
         <div
           className={[
-            "pointer-events-none absolute inset-x-0 top-0 h-full backdrop-blur-md transition-[background-color,box-shadow,border-color] duration-300 ease-out",
-            showBarFill
-              ? "bg-[linear-gradient(to_bottom,rgba(255,248,243,0.94)_0%,rgba(255,248,243,0.82)_90%,transparent_100%)]"
-              : "max-md:bg-[linear-gradient(to_bottom,rgba(255,248,243,0.94)_0%,rgba(255,248,243,0.82)_90%,transparent_100%)] md:bg-transparent",
+            "pointer-events-none absolute inset-x-0 top-0 h-full bg-[image:var(--header-backdrop)] backdrop-blur-md transition-[background-image,opacity] duration-300 ease-out",
+            showBarFill ? "" : "max-md:bg-[image:var(--header-backdrop)] md:bg-none",
           ].join(" ")}
           aria-hidden
         />
@@ -133,7 +132,9 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <button
+          <div className="flex shrink-0 items-center gap-2 md:gap-3">
+            <ThemeToggle />
+            <button
             type="button"
             className="relative z-[60] flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-[5px] rounded-xl border border-[var(--border-subtle)] bg-[var(--surface)]/90 shadow-sm md:hidden"
             aria-expanded={menuOpen}
@@ -157,6 +158,7 @@ export function SiteHeader() {
               }`}
             />
           </button>
+          </div>
         </div>
       </motion.header>
 

@@ -57,7 +57,7 @@ export function SiteFooter() {
         >
           <motion.a
             href={`mailto:${site.email}`}
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[var(--ink)] to-[#312e81] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20"
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[var(--footer-email-cta-from)] to-[var(--footer-email-cta-to)] px-6 py-3 text-sm font-semibold text-[var(--footer-email-cta-text)] [box-shadow:var(--footer-email-cta-shadow)]"
             whileHover={reduceMotion ? undefined : { scale: 1.04, y: -2 }}
             whileTap={reduceMotion ? undefined : { scale: 0.98 }}
             transition={spring.snappy}

@@ -67,7 +67,7 @@ export function ProjectCard({ project, priorityImage = false }: ProjectCardProps
             {project.stats.map((stat) => (
               <li
                 key={stat}
-                className="rounded-full border border-teal-600/25 bg-gradient-to-r from-teal-500/12 to-emerald-500/10 px-3 py-1 text-xs font-semibold tracking-tight text-teal-900 shadow-sm"
+                className="rounded-full border border-[var(--project-stat-border)] bg-gradient-to-r from-[var(--project-stat-from)] to-[var(--project-stat-to)] px-3 py-1 text-xs font-semibold tracking-tight text-[var(--project-stat-ink)] shadow-sm"
               >
                 {stat}
               </li>
@@ -86,7 +86,7 @@ export function ProjectCard({ project, priorityImage = false }: ProjectCardProps
           {project.tags.map((t) => (
             <li
               key={t}
-              className="rounded-md bg-gradient-to-br from-[var(--surface-soft)] to-[#fae8ff] px-2 py-0.5 text-[11px] font-medium text-[var(--ink)]/80"
+              className="rounded-md bg-gradient-to-br from-[var(--project-tag-from)] to-[var(--project-tag-to)] px-2 py-0.5 text-[11px] font-medium text-[var(--project-tag-ink)]"
             >
               {t}
             </li>

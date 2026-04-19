@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, Source_Serif_4 } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const syne = Syne({
@@ -42,8 +43,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${syne.variable} ${sourceSerif.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Portfolio" />
+      </head>
+      <body className="flex min-h-full flex-col">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
