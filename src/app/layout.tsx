@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, Source_Serif_4 } from "next/font/google";
+import { CvProvider } from "@/components/CvDialog";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
@@ -49,7 +50,9 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Portfolio" />
       </head>
       <body className="flex min-h-full flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <CvProvider>{children}</CvProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

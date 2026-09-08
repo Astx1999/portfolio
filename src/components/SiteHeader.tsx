@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { spring } from "@/lib/motion";
+import { OpenCvButton } from "@/components/CvDialog";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import styles from "@/styles/portfolio.module.scss";
 
@@ -130,6 +131,20 @@ export function SiteHeader() {
                 </Link>
               </motion.div>
             ))}
+            <motion.div
+              custom={links.length}
+              initial="hidden"
+              animate="show"
+              variants={navItem}
+            >
+              <OpenCvButton className="group relative rounded-full px-3 py-1.5 text-xs font-medium text-[var(--muted)] transition-colors hover:text-[var(--ink)] md:text-sm">
+                <span className="relative z-10">CV</span>
+                <span
+                  className="absolute inset-x-2 -bottom-0.5 h-0.5 origin-center scale-x-0 rounded-full bg-gradient-to-r from-[var(--copper)] to-[var(--copper-light)] transition-transform duration-300 ease-out group-hover:scale-x-100"
+                  aria-hidden
+                />
+              </OpenCvButton>
+            </motion.div>
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 md:gap-3">
@@ -197,6 +212,14 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
+            <li>
+              <OpenCvButton
+                className="block w-full rounded-xl px-4 py-3.5 text-left font-[family-name:var(--font-syne)] text-lg font-semibold text-[var(--ink)] transition-colors hover:bg-[var(--surface-soft)] hover:text-[var(--copper)]"
+                onOpen={closeMenu}
+              >
+                CV
+              </OpenCvButton>
+            </li>
           </ul>
         </nav>
       </div>

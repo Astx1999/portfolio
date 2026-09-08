@@ -15,6 +15,18 @@ export type Project = {
 
 export const publicProjects: Project[] = [
   {
+    id: "use-ai",
+    title: "Use AI",
+    description:
+      "Personal AI assistant at use.ai — chat, files, images, and projects in one workspace, with access to leading models. I worked on connectors that plug the assistant into external apps, and on A/B features used to ship and compare product experiments.",
+    tags: ["Next.js", "AI", "Connectors", "A/B"],
+    href: "https://use.ai",
+    hrefLabel: "use.ai",
+    image: "/showcases/use-ai.png",
+    featured: true,
+    stats: ["~25M monthly visits", "Connectors", "A/B experiments"],
+  },
+  {
     id: "indiska",
     title: "Indiska",
     description:
@@ -136,9 +148,41 @@ export const publicProjects: Project[] = [
     hrefLabel: "loyal.am",
     image: "/showcases/loyal.png",
   },
+  {
+    id: "steg-logistic",
+    title: "Steg Logistic",
+    description:
+      "Public request flow for a Swedish moving and cleaning company — a short quote wizard where customers describe the move, dates, and extras so the team can price the job.",
+    tags: ["Sweden", "Moving", "Booking"],
+    href: "https://steglogistic-wp.fastdev.se/",
+    hrefLabel: "steglogistic-wp.fastdev.se",
+    extraLinks: [
+      {
+        label: "Admin",
+        href: "https://admin.steg-logistic.se/login",
+      },
+    ],
+    image: "/showcases/steg-logistic.png",
+  },
 ];
 
 export const privateProjects: Project[] = [
+  {
+    id: "steg-logistic-admin",
+    title: "Steg Logistic — Admin",
+    description:
+      "Operations dashboard for a Swedish platform that orders moving and cleaning services — customer inquiries, sent and accepted jobs, revenue, complaints, and company filters for staff.",
+    tags: ["Admin", "Sweden", "Logistics"],
+    href: "https://admin.steg-logistic.se/login",
+    hrefLabel: "admin.steg-logistic.se",
+    extraLinks: [
+      {
+        label: "Public requests",
+        href: "https://steglogistic-wp.fastdev.se/",
+      },
+    ],
+    image: "/showcases/steg-logistic-admin.png",
+  },
   {
     id: "caring",
     title: "Australian Healthcare SaaS",

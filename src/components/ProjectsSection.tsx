@@ -57,9 +57,9 @@ export function ProjectsSection() {
             className="mt-4 max-w-2xl text-[var(--muted)]"
             variants={headItem}
           >
-            Retail, events, public sector, and professional services —
-            interfaces people use every day across the Nordics, Armenia, and
-            beyond.
+            AI products, retail, events, public sector, and professional
+            services — interfaces people use every day across the Nordics,
+            Armenia, and beyond.
           </motion.p>
         </motion.div>
 

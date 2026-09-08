@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { OpenCvButton } from "@/components/CvDialog";
 import { site } from "@/data/site";
 import {
   sectionHeadItem,
@@ -72,6 +73,9 @@ export function SiteFooter() {
           >
             LinkedIn ↗
           </Link>
+          <OpenCvButton className="text-left text-sm font-semibold text-[var(--copper)] underline-offset-4 hover:text-[var(--copper-light)] hover:underline">
+            CV
+          </OpenCvButton>
         </motion.div>
       </div>
       <motion.p

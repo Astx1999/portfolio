@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ExperienceBadge } from "@/components/ExperienceBadge";
+import { OpenCvButton } from "@/components/CvDialog";
 import { site } from "@/data/site";
 import styles from "@/styles/portfolio.module.scss";
 
@@ -56,6 +57,9 @@ export function Hero() {
             >
               Contact
             </Link>
+            <OpenCvButton className="inline-flex items-center justify-center rounded-full border-2 border-[var(--border-strong)] bg-[var(--surface)]/80 px-7 py-3.5 text-sm font-semibold text-[var(--ink)] backdrop-blur-sm transition-colors hover:border-[var(--copper-light)]/50 hover:bg-[var(--surface-soft)]">
+              CV
+            </OpenCvButton>
           </div>
         </div>
       </div>
